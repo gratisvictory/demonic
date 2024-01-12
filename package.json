@@ -13,20 +13,8 @@
     "build": "tsc -p tsconfig.json",
     "test": "node --test __tests__/**/*.test.js",
     "start": "node build/index.js | pino-pretty --colorize",
-    "postinstall": "husky install",
     "dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts | pino-pretty --colorize",
     "dev:debug": "ts-node-dev --debug ./src/index.ts | pino-pretty --colorize"
-  },
-  "lint-staged": {
-    "*.{js,ts,json,css,md}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "keywords": [],
   "author": "gratisvictory",
