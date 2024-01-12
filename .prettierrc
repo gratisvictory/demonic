@@ -1,0 +1,24 @@
+{
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 4,
+    "plugins": [
+        "prettier-plugin-multiline-arrays",
+        "@ianvs/prettier-plugin-sort-imports"
+    ],
+    "multilineArraysWrapThreshold": 2,
+    "importOrder": [
+        "<BUILTIN_MODULES>",
+        "^(react|next(.*))$",
+        "<THIRD_PARTY_MODULES>",
+        "<TYPES>",
+        "",
+        "^@/(.*)$",
+        "^~/(.*)$",
+        "^[./]",
+        "<TYPES>^[.]",
+        "^(.*)(sass|css|scss)$"
+      ]
+}
