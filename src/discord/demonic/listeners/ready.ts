@@ -1,5 +1,6 @@
-import { Commands } from '@utils/commands';
 import { Client } from 'discord.js';
+
+import { Commands } from '../utils/commands';
 
 const DEMONIC_BOT = 'Demonic Bot';
 

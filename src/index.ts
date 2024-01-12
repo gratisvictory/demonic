@@ -1,5 +1,4 @@
 import path from 'path';
-import { client } from '@discord/demonic/Bot';
 import env from '@fastify/env';
 import Sensible from '@fastify/sensible';
 import fastifyStatic from '@fastify/static';
@@ -8,6 +7,8 @@ import * as dotenv from 'dotenv';
 import fastify from 'fastify';
 import S from 'fluent-json-schema';
 import p from 'pino';
+
+import { client } from './discord/demonic/Bot';
 
 dotenv.config();
 
@@ -34,7 +35,7 @@ const Bootstrap = async () => {
                 .valueOf(),
         });
         server.register(fastifyStatic, {
-            root: path.join(__dirname, '..', 'public'),
+            root: path.join(__dirname, '..', 'dist'),
         });
         server.register(Sensible);
         server.register(pressure, {
@@ -51,7 +52,6 @@ const Bootstrap = async () => {
                 reply.send(error);
             }
         });
-        server.get('/invite', () => {});
         await client.login(process.env.DISCORD_BOT_TOKEN);
         await server.listen({
             port: process.env.PORT as unknown as number,

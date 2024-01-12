@@ -1,4 +1,3 @@
-import { Command } from '@utils/command';
 import { createCanvas, loadImage } from 'canvas';
 import {
     Activity,
@@ -8,6 +7,8 @@ import {
     EmbedBuilder,
     GuildMember,
 } from 'discord.js';
+
+import { Command } from '../utils/command';
 
 const SPOTIFY_OPTION_TYPE = ApplicationCommandOptionType.User;
 const SPOTIFY_TYPE = ApplicationCommandType.ChatInput;

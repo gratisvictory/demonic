@@ -20,3 +20,4 @@ coverage
 *.html
 *.md
 .*ignore
+@types

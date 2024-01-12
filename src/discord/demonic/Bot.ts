@@ -1,6 +1,7 @@
-import interactionCreate from '@listeners/interaction-create';
-import ready from '@listeners/ready';
 import { Client, GatewayIntentBits, Partials } from 'discord.js';
+
+import interactionCreate from './listeners/interaction-create';
+import ready from './listeners/ready';
 
 console.log('Bot is starting...');
 

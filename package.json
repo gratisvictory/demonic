@@ -10,11 +10,14 @@
     "types": "./dist/index.d.ts"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "start": "node dist/index.js | pino-pretty --colorize",
     "test": "node --test __tests__/**/*.test.js",
-    "start": "node build/index.js | pino-pretty --colorize",
+    "watch": "tsc --watch --preserveWatchOutput --pretty",
+    "format": "prettier --write \"src/**/*.ts\"",
     "dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts | pino-pretty --colorize",
-    "dev:debug": "ts-node-dev --debug ./src/index.ts | pino-pretty --colorize"
+    "dev:debug": "ts-node-dev --debug ./src/index.ts | pino-pretty --colorize",
+    "pretty": "pnpm build && pnpm start"
   },
   "keywords": [],
   "author": "gratisvictory",
@@ -65,6 +68,7 @@
     "pino-pretty": "^10.3.1",
     "prettier": "^3.1.1",
     "prettier-plugin-multiline-arrays": "^3.0.1",
+    "rimraf": "^5.0.5",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"

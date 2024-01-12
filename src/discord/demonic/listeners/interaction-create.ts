@@ -1,5 +1,6 @@
-import { Commands } from '@utils/commands';
 import { Client, CommandInteraction, Interaction } from 'discord.js';
+
+import { Commands } from '../utils/commands';
 
 const interactionCreate = (client: Client): void => {
     client.on('interactionCreate', async (interaction: Interaction) => {
