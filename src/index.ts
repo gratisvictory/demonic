@@ -1,6 +1,8 @@
+import path from 'path';
 import { client } from '@discord/demonic/Bot';
 import env from '@fastify/env';
 import Sensible from '@fastify/sensible';
+import fastifyStatic from '@fastify/static';
 import pressure from '@fastify/under-pressure';
 import * as dotenv from 'dotenv';
 import fastify from 'fastify';
@@ -30,6 +32,9 @@ const Bootstrap = async () => {
                 .prop('SPOTIFY_CLIENT_ID', S.string().required())
                 .prop('SPOTIFY_SECRET', S.string().required())
                 .valueOf(),
+        });
+        server.register(fastifyStatic, {
+            root: path.join(__dirname, '..', 'public'),
         });
         server.register(Sensible);
         server.register(pressure, {
