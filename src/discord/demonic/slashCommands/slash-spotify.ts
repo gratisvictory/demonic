@@ -42,11 +42,10 @@ const Spotify: Command = {
 
             if (!presence) {
                 return await interaction.followUp({
-                    content: `${user.displayName} не слушает Spotify`,
+                    content: `<@${user.id}> не слушает Spotify`,
                     ephemeral: true,
                 });
             }
-
             if (presence) {
                 if (presence.activities.length === 1) {
                     status = presence.activities[0];
